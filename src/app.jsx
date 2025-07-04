@@ -4,6 +4,8 @@ import Home from "./pages/home.jsx";
 import Books from "./pages/books.jsx";
 import Icons from "./pages/icons.jsx";
 import Other from "./pages/other.jsx";
+import Cart from "./pages/cart.jsx";
+import Checkout from "./pages/checkout.jsx";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/books" element={<Books />} />
         <Route path="/icons" element={<Icons />} />
         <Route path="/other" element={<Other />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </Router>
   );

@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #0c1f1a; /* deep emerald */
+  background-color: #0c1f1a;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -8,7 +8,7 @@
 }
 
 .navbar-logo a {
-  color: #f7eddc; /* ivory */
+  color: #f7eddc;
   text-decoration: none;
   font-size: 1.6rem;
   font-weight: bold;
@@ -23,7 +23,7 @@
 }
 
 .navbar-links a {
-  color: #d6a85c; /* soft gold */
+  color: #d6a85c;
   text-decoration: none;
   font-size: 1rem;
   font-weight: bold;
@@ -32,4 +32,67 @@
 
 .navbar-links a:hover {
   color: #f7eddc;
+}
+
+.cart-link {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-counter {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Dropdown handling */
+.navbar-links .dropdown {
+  position: relative;
+}
+
+.dropdown span {
+  cursor: pointer;
+  color: #d6a85c;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fffdf6;
+  border: 1px solid #d6a85c;
+  border-radius: 4px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  min-width: 180px;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #0c1f1a;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f7eddc;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Fix right alignment for 'Other' dropdown */
+.other-dropdown .dropdown-menu {
+  left: auto;
+  right: 0;
 }

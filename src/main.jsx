@@ -1,10 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./app.jsx";
-import "./index.css";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './app.jsx'; // Capitalize to match component naming convention
+import { CartProvider } from './CartContext.jsx'; // Ensure correct path and casing
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+// Make sure your HTML file has a <div id="root"></div>
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <CartProvider>
+      <App />
+    </CartProvider>
   </React.StrictMode>
 );

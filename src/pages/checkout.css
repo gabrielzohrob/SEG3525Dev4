@@ -1,0 +1,198 @@
+.product-page {
+  padding: 2rem;
+  font-family: 'Georgia', serif;
+  background-color: #f7eddc;
+  color: #0c1f1a;
+  min-height: 100vh;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.checkout-form {
+  background-color: #fffdf6;
+  border: 1px solid #d6a85c;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.order-summary,
+.customer-info {
+  margin-bottom: 2rem;
+}
+
+.order-summary h2,
+.customer-info h2,
+.payment-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #0c1f1a;
+}
+
+.summary-item {
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0;
+}
+
+.summary-item p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.customer-info input,
+.customer-info textarea,
+.customer-info select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: 'Georgia', serif;
+}
+
+.customer-info textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.customer-info select {
+  background-color: #fffdf6;
+  color: #0c1f1a;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%230c1f1a' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 1rem;
+}
+
+.add-to-cart-button {
+  background-color: #0c1f1a;
+  color: #f7eddc;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.add-to-cart-button:hover {
+  background-color: #1f3f33;
+}
+
+.order-success {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #fffdf6;
+  border: 2px solid #d6a85c;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.order-success h2 {
+  color: green;
+  margin-bottom: 1rem;
+}
+
+.order-success p {
+  font-size: 1.1rem;
+}
+
+.checkout-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.checkout-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.checkout-right {
+  width: 350px;
+  flex-shrink: 0;
+}
+
+/* Row layout for city, province, postal */
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+.pickup-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #0c1f1a;
+}
+.pickup-checkbox input[type="checkbox"] {
+  accent-color: #0c1f1a; /* optional for darker checkbox styling */
+  width: 16px;
+  height: 16px;
+}
+
+.payment-section {
+  margin-top: 2rem;
+}
+
+.payment-option {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #fffdf6;
+}
+
+.payment-option input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+.payment-label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.card-details input {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: 'Georgia', serif;
+}
+
+.card-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.card-row input {
+  flex: 1;
+}
+
+.billing-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
