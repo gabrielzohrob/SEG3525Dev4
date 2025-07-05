@@ -236,8 +236,14 @@ function ProductPage() {
             <h1>{product.title}</h1>
             <h2 className="product-price">${product.price.toFixed(2)}</h2>
             <p className="product-description">{product.description}</p>
-            <div className="product-actions mt-4 product-actions-left">
+            <Row className="product-actions mt-4">
               <Row className="align-items-center">
+                <Col xs="auto">
+                  <Button
+                    variant="primary"
+                    className="product-add-btn-left"
+                    onClick={() => handleAddToCart(product)}>Add to Cart</Button>
+                </Col>
                 <Col xs="auto">
                     <label htmlFor="quantity" className="me-2">Quantity:</label>
                     <input
@@ -248,14 +254,9 @@ function ProductPage() {
                         onChange={(e) => handleQuantityChange(id, e.target.value)}
                     />
                 </Col>
-                <Col xs="auto">
-                  <Button 
-                    variant="primary" 
-                    className="product-add-btn-left" 
-                    onClick={() => handleAddToCart(product)}>Add to Cart</Button>
-                </Col>
+                
               </Row>
-            </div>
+            </Row>
           </div>
         </Col>
       </Row>

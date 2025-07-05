@@ -42,7 +42,6 @@ function Home() {
           <div className="hero-container">
             <img
                 src="/others/george-shop.jpg"
-                alt="Service Banner"
                 className="hero-background-img"
             />
 
@@ -128,7 +127,7 @@ function Home() {
               />
               <h3>{item.title}</h3>
               <div className="featured-card-button">
-                <Button href={item.link}>Learn more</Button>
+                <Button href={`/product/${item.link}`}>Learn more</Button>
               </div>
             </div>
           ))}

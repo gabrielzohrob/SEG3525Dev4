@@ -7,11 +7,13 @@ import Other from "./pages/other.jsx";
 import Cart from "./pages/cart.jsx";
 import ProductPage from "./pages/product.jsx"
 import Checkout from "./pages/checkout.jsx";
+import Breadcrumbs from './components/breadcrumbs.jsx';
 
 function App() {
   return (
     <Router>
       <Navbar />
+      <Breadcrumbs />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/books" element={<Books />} />

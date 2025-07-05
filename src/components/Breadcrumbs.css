@@ -1,0 +1,13 @@
+/* src/components/Breadcrumbs.css */
+.breadcrumbs {
+    margin: 1rem;
+    font-size: 0.9rem;
+    color: #888;
+}
+.breadcrumbs a {
+    color: #d6a85c;
+    text-decoration: none;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
