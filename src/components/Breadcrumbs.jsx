@@ -36,6 +36,8 @@ const Breadcrumbs = () => {
   const [searchParams] = useSearchParams();
   const filter = searchParams.get('subcategory');
 
+  if (pathnames.length === 0) return null;
+
   return (
     <nav className="breadcrumbs">
     <Link to="/">Home</Link>
