@@ -21,6 +21,7 @@ const bookData = [
     subcategory: "Saints Lives and Writings",
     description: "A classic spiritual journey of an anonymous Russian pilgrim seeking the Jesus Prayer.",
     image: book1Img,
+    link:thewayofapilgrim,
   },
   {
     id: 2,
@@ -29,6 +30,7 @@ const bookData = [
     subcategory: "Prayer Book",
     description: "A compact and essential guide to daily Orthodox prayers and services.",
     image: book2Img,
+    link: orthodoxprayerbook,
   },
   {
     id: 3,
@@ -37,6 +39,7 @@ const bookData = [
     subcategory: "Theology",
     description: "A foundational text of Orthodox spirituality by St. John Climacus.",
     image: book3Img,
+    link:ladderofdivineascent,
   },
   {
     id: 4,
@@ -45,6 +48,7 @@ const bookData = [
     subcategory: "Saints Lives and Writings",
     description: "The beautiful and humble teachings of Elder Porphyrios on divine love.",
     image: book4Img,
+    link:woundedbylove,
   },
   {
     id: 5,
@@ -53,6 +57,7 @@ const bookData = [
     subcategory: "History",
     description: "The Orthodox Church, an Introduction to Eastern Christianity, by Timothy Ware",
     image: book5Img,
+    link:orthodoxchurch,
   },
 ];
 
