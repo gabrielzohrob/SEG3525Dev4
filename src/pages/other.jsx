@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useLocation, Link } from "react-router-dom";
 import "./card.css";
-import {Row, Col, Container} from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import { CartContext } from "../CartContext.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +13,7 @@ const otherItems = [
     title: "Prayer Rope (33 knots)",
     price: 12.0,
     description: "Traditional woolen prayer rope used for the Jesus Prayer.",
-    image: "/others/33knot.jpg",
+    image: `${import.meta.env.BASE_URL}others/33knot.jpg`,
     subcategory: "Prayer Rope",
     link: "prayerrope33"
   },
@@ -22,7 +22,7 @@ const otherItems = [
     title: "Prayer Rope (100 knots)",
     price: 20.0,
     description: "Longer woolen prayer rope for extended prayer and meditation.",
-    image: "/others/100knot.jpg",
+    image: `${import.meta.env.BASE_URL}others/100knot.jpg`,
     subcategory: "Prayer Rope",
     link: "prayerrope100"
   },
@@ -31,7 +31,7 @@ const otherItems = [
     title: "Incense - Byzantine Blend",
     price: 8.5,
     description: "High-quality incense with a rich, aromatic Byzantine fragrance.",
-    image: "/others/incense.jpg",
+    image: `${import.meta.env.BASE_URL}others/incense.jpg`,
     subcategory: "Incense",
     link: "incensebyzantine"
   },
@@ -40,7 +40,7 @@ const otherItems = [
     title: "Charcoal Tablets (Box)",
     price: 6.0,
     description: "Quick-lighting charcoal for burning incense at home or church.",
-    image: "/others/charcoal.jpg",
+    image: `${import.meta.env.BASE_URL}others/charcoal.jpg`,
     subcategory: "Incense",
     link: "charcoaltablets"
   },
@@ -49,17 +49,16 @@ const otherItems = [
     title: "Orthodox Wall Cross (Wooden)",
     price: 18.0,
     description: "Hand-carved wooden wall cross for prayer corners.",
-    image: "/others/cross.jpg",
+    image: `${import.meta.env.BASE_URL}others/cross.jpg`,
     subcategory: "Cross",
     link: "woodencross"
   },
-
   {
     id: 6,
     title: "Pure Beeswax Candles",
     price: 30.0,
     description: "Candles made out of Pure Beeswax",
-    image: "/others/candles.jpg",
+    image: `${import.meta.env.BASE_URL}others/candles.jpg`,
     subcategory: "Candles",
     link: "beeswaxcandles"
   },
@@ -134,21 +133,21 @@ function Other() {
             </Row>
 
             <Col className="add-cart-buttons">
-                <button
-                  style={{ backgroundColor: 'transparent', border: 'none' }}
-                  onClick={() => handleAddToCart(item)}
-                  title="Add to Cart"
-                >
-                  <FontAwesomeIcon className="bag-image" icon={faBagShopping} size="lg" />
-                </button>
-                <input
-                  type="number"
-                  min="1"
-                  className="quantity-selector"
-                  value={quantities[item.id]}
-                  onChange={(e) => handleQuantityChange(item.id, e.target.value)}
-                />
-              </Col>
+              <button
+                style={{ backgroundColor: 'transparent', border: 'none' }}
+                onClick={() => handleAddToCart(item)}
+                title="Add to Cart"
+              >
+                <FontAwesomeIcon className="bag-image" icon={faBagShopping} size="lg" />
+              </button>
+              <input
+                type="number"
+                min="1"
+                className="quantity-selector"
+                value={quantities[item.id]}
+                onChange={(e) => handleQuantityChange(item.id, e.target.value)}
+              />
+            </Col>
           </div>
         ))}
       </div>

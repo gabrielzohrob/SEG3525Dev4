@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
-import {Image} from "react-bootstrap"
 import { useContext } from "react";
 import { CartContext } from "../CartContext.jsx";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-    import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-    import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'; // Example fab icons
-
-
-import "./navbar.css"
+import "./navbar.css";
 
 function Navbar() {
   const { cartItems } = useContext(CartContext);
@@ -17,7 +14,7 @@ function Navbar() {
     <nav className="navbar">
       <div>
         <Link to="/" className="navbar-logo">
-          <img src="/logos/st-elias-logo.png" alt="logo"/>
+          <img src={`${import.meta.env.BASE_URL}logos/st-elias-logo.png`} alt="logo" />
           <span className="logo-text">St. Elias Bookstore</span>
         </Link>
       </div>

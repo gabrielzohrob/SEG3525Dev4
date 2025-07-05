@@ -38,7 +38,7 @@ function Cart() {
     0
   );
   const shippingCost = 7.99;
-  const taxRate = 0.13; // 13% tax
+  const taxRate = 0.13;
   const taxAmount = totalPrice * taxRate;
   const grandTotal = totalPrice + taxAmount + shippingCost;
 
@@ -54,14 +54,17 @@ function Cart() {
               const key = `${item.id}-${item.title}`;
               return (
                 <div key={key} className="cart-item">
-                  <img src={item.image} alt={item.title} className="cart-img" />
-                  <div >
+                  <img
+                    src={`${import.meta.env.BASE_URL}${item.image}`}
+                    alt={item.title}
+                    className="cart-img"
+                  />
+                  <div>
                     <h2 className="cart-title">{item.title}</h2>
                     <p className="cart-price">
                       Price: ${parseFloat(item.price).toFixed(2)}
                     </p>
                   </div>
-
 
                   <div className="cart-actions">
                     <input

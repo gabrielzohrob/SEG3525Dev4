@@ -5,12 +5,10 @@ import './Home.css';
 import { useState } from 'react';
 
 function Home() {
-
   const [showModal, setShowModal] = useState(false);
   const handleOpenModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
 
-  // State for form fields and validation errors
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,10 +26,8 @@ function Home() {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      // Process form submission (e.g., send to server)
       setErrors({});
       handleCloseModal();
-      // Optionally reset formData here
     }
   };
 
@@ -39,29 +35,25 @@ function Home() {
     <div className="home-container">
       {/* Hero Section */}
       <section className="hero-section">
-          <div className="hero-container">
-            <img
-                src="/others/george-shop.jpg"
-                className="hero-background-img"
-            />
-
-            <div className="hero-text-overlay">
-              <h1>Welcome to the St. Elias Cathedral's <br></br>Online Bookstore</h1>
-              
-              <p>The only Orthodox shop located in Ottawa for handpicked Orthodox books, sacred icons, and devotional treasures for the faithful.</p>
-              
-              <div className="hero-buttons">
-                <Link to="/books">Books</Link>
-                <Link to="/icons">Icons</Link>
-                <Link to="/other">Other</Link>
-              </div>
-
+        <div className="hero-container">
+          <img
+            src={`${import.meta.env.BASE_URL}others/george-shop.jpg`}
+            className="hero-background-img"
+            alt="Store"
+          />
+          <div className="hero-text-overlay">
+            <h1>Welcome to the St. Elias Cathedral's <br />Online Bookstore</h1>
+            <p>The only Orthodox shop located in Ottawa for handpicked Orthodox books, sacred icons, and devotional treasures for the faithful.</p>
+            <div className="hero-buttons">
+              <Link to="/books">Books</Link>
+              <Link to="/icons">Icons</Link>
+              <Link to="/other">Other</Link>
             </div>
           </div>
-
+        </div>
       </section>
 
-      {/*Location Section */}
+      {/* Location Section */}
       <Container className="location-container container mt-5 mb-5">
         <Row>
           <Col md={5} className="location-desc">
@@ -72,12 +64,11 @@ function Home() {
               <br />
               You can also stop by for a chat with our delightful store clerk.
             </p>
-
             <ul className="time-list">
               <li className="time-item">Open Sundays from 12:15p.m to 1:00p.m</li>
               <li className="time-item">
                 <Button variant="link" style={{ padding: 0, textDecoration: "none", color: "black" }} onClick={handleOpenModal}>
-                  Can also open upon request     (<i>Click for more details</i>)
+                  Can also open upon request (<i>Click for more details</i>)
                 </Button>
               </li>
             </ul>
@@ -97,7 +88,7 @@ function Home() {
             </div>
           </Col>
         </Row>
-    </Container>
+      </Container>
 
       {/* Featured Section */}
       <section className="featured-section">
@@ -106,25 +97,22 @@ function Home() {
           {[
             {
               title: 'Orthodox Study Bible',
-              image: '/books/orthodox-bible.jpg',
+              image: `${import.meta.env.BASE_URL}books/orthodox-bible.jpg`,
               link: 'studybible'
             },
             {
               title: 'Icon of Christ Pantocrator',
-              image: '/icons/pantocrator.jpg',
+              image: `${import.meta.env.BASE_URL}icons/pantocrator.jpg`,
               link: 'pantocrator'
             },
             {
               title: 'Prayer Rope (Komboskini)',
-              image: '/others/komboskini.jpg',
+              image: `${import.meta.env.BASE_URL}others/komboskini.jpg`,
               link: 'komb33'
             },
           ].map((item, index) => (
             <div key={index} className="featured-card">
-              <img
-                src={item.image}
-                alt={item.title}
-              />
+              <img src={item.image} alt={item.title} />
               <h3>{item.title}</h3>
               <div className="featured-card-button">
                 <Button href={`/product/${item.link}`}>Learn more</Button>
@@ -133,6 +121,8 @@ function Home() {
           ))}
         </div>
       </section>
+
+      {/* Modal */}
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
           <Modal.Title>Request In-Store Opening</Modal.Title>
@@ -148,9 +138,7 @@ function Home() {
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 isInvalid={!!errors.name}
               />
-              <Form.Control.Feedback type="invalid">
-                {errors.name}
-              </Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">{errors.name}</Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="mb-3" controlId="contactEmail">
               <Form.Label>Email address</Form.Label>
@@ -161,9 +149,7 @@ function Home() {
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 isInvalid={!!errors.email}
               />
-              <Form.Control.Feedback type="invalid">
-                {errors.email}
-              </Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="mb-3" controlId="contactNumber">
               <Form.Label>Phone Number</Form.Label>
@@ -174,9 +160,7 @@ function Home() {
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 isInvalid={!!errors.phone}
               />
-              <Form.Control.Feedback type="invalid">
-                {errors.phone}
-              </Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">{errors.phone}</Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="mb-3" controlId="requestDetails">
               <Form.Label>Request Details</Form.Label>

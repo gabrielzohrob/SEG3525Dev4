@@ -2,8 +2,7 @@ import React, { useState, useContext } from "react";
 import { useLocation, Link } from "react-router-dom";
 import "./card.css";
 import { CartContext } from "../CartContext.jsx";
-import {Row, Col, Container} from 'react-bootstrap';
-
+import { Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 
@@ -99,35 +98,32 @@ function Books() {
       <div className="product-grid">
         {filteredItems.map((item) => (
           <div key={item.id} className="product-card">
-            <img src={item.image} alt={item.title} />
+            <img src={`${import.meta.env.BASE_URL}${item.image}`} alt={item.title} />
             <h2 className="product-title">{item.title}</h2>
             <p className="product-price">${item.price.toFixed(2)}</p>
             <p className="product-description">{item.description}</p>
             <Row className="product-actions">
-              <Link
-                to={`/product/${item.link}`}
-                className="details-button"
-              >
+              <Link to={`/product/${item.link}`} className="details-button">
                 View Details
               </Link>
             </Row>
 
             <Col className="add-cart-buttons">
-                <button
-                  style={{ backgroundColor: 'transparent', border: 'none' }}
-                  onClick={() => handleAddToCart(item)}
-                  title="Add to Cart"
-                >
-                  <FontAwesomeIcon className="bag-image" icon={faBagShopping} size="lg" />
-                </button>
-                <input
-                  type="number"
-                  min="1"
-                  className="quantity-selector"
-                  value={quantities[item.id]}
-                  onChange={(e) => handleQuantityChange(item.id, e.target.value)}
-                />
-              </Col>
+              <button
+                style={{ backgroundColor: "transparent", border: "none" }}
+                onClick={() => handleAddToCart(item)}
+                title="Add to Cart"
+              >
+                <FontAwesomeIcon className="bag-image" icon={faBagShopping} size="lg" />
+              </button>
+              <input
+                type="number"
+                min="1"
+                className="quantity-selector"
+                value={quantities[item.id]}
+                onChange={(e) => handleQuantityChange(item.id, e.target.value)}
+              />
+            </Col>
           </div>
         ))}
       </div>
