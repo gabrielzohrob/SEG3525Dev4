@@ -1,7 +1,9 @@
 import React, { useState, useContext } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import "./other.css";
 import { CartContext } from "../CartContext.jsx";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 
 // Items with subcategories
 const otherItems = [
@@ -12,6 +14,7 @@ const otherItems = [
     description: "Traditional woolen prayer rope used for the Jesus Prayer.",
     image: "/others/33knot.jpg",
     subcategory: "Prayer Rope",
+    link: "prayerrope33"
   },
   {
     id: 2,
@@ -20,6 +23,7 @@ const otherItems = [
     description: "Longer woolen prayer rope for extended prayer and meditation.",
     image: "/others/100knot.jpg",
     subcategory: "Prayer Rope",
+    link: "prayerrope100"
   },
   {
     id: 3,
@@ -28,6 +32,7 @@ const otherItems = [
     description: "High-quality incense with a rich, aromatic Byzantine fragrance.",
     image: "/others/incense.jpg",
     subcategory: "Incense",
+    link: "incensebyzantine"
   },
   {
     id: 4,
@@ -36,6 +41,7 @@ const otherItems = [
     description: "Quick-lighting charcoal for burning incense at home or church.",
     image: "/others/charcoal.jpg",
     subcategory: "Incense",
+    link: "charcoaltablets"
   },
   {
     id: 5,
@@ -44,6 +50,7 @@ const otherItems = [
     description: "Hand-carved wooden wall cross for prayer corners.",
     image: "/others/cross.jpg",
     subcategory: "Cross",
+    link: "woodencross"
   },
 
   {
@@ -53,6 +60,7 @@ const otherItems = [
     description: "Candles made out of Pure Beeswax",
     image: "/others/candles.jpg",
     subcategory: "Candles",
+    link: "beeswaxcandles"
   },
 ];
 
@@ -116,6 +124,20 @@ function Other() {
             <p className="product-price">${item.price.toFixed(2)}</p>
             <p className="product-description">{item.description}</p>
             <div className="product-actions">
+              <Link
+                to={`/product/${item.link}`}
+                className="details-button"
+              >
+                View Details
+              </Link>
+              <button
+                className="fab-cart-button"
+                style={{ backgroundColor: 'transparent', border: 'none' }}
+                onClick={() => handleAddToCart(item)}
+                title="Add to Cart"
+              >
+                <FontAwesomeIcon className="bag-image" icon={faBagShopping} size="lg" />
+              </button>
               <input
                 type="number"
                 min="1"
@@ -123,12 +145,7 @@ function Other() {
                 value={quantities[item.id]}
                 onChange={(e) => handleQuantityChange(item.id, e.target.value)}
               />
-              <button
-                className="add-to-cart-button"
-                onClick={() => handleAddToCart(item)}
-              >
-                Add to Cart
-              </button>
+              
             </div>
           </div>
         ))}

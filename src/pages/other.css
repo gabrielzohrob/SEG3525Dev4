@@ -71,7 +71,7 @@
   font-size: 1rem;
 }
 
-.add-to-cart-button {
+.details-button {
   background-color: #0c1f1a;
   color: #f7eddc;
   border: none;
@@ -81,8 +81,16 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
-.add-to-cart-button:hover {
+.details-button:hover {
   background-color: #165c47;
 }
+
+.add-to-cart-button{
+  color:#d6a85c;
+  background-color: transparent;
+
+}
+

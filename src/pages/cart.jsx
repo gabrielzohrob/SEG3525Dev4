@@ -34,32 +34,36 @@ function Cart() {
   };
 
   const totalPrice = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
+    (sum, item) => sum + parseFloat(item.price) * item.quantity,
     0
   );
+  const shippingCost = 7.99;
+  const taxRate = 0.13; // 13% tax
+  const taxAmount = totalPrice * taxRate;
+  const grandTotal = totalPrice + taxAmount + shippingCost;
 
   return (
-    <div className="product-page">
-      <h1 className="page-title">Your Cart</h1>
-
-      {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
-      ) : (
-        <>
-          <div className="product-grid">
+    <div className="cart-container">
+      <div className="cart-left">
+        <h1 className="page-title">Your Cart</h1>
+        {cartItems.length === 0 ? (
+          <p>Your cart is empty.</p>
+        ) : (
+          <div className="cart-list">
             {cartItems.map((item) => {
               const key = `${item.id}-${item.title}`;
               return (
-                <div key={key} className="product-card">
-                  <img src={item.image} alt={item.title} />
-                  <h2 className="product-title">{item.title}</h2>
-                  <p className="product-price">
-                    Price: ${item.price.toFixed(2)}
-                  </p>
-                  <p className="product-description">
-                    Quantity: {item.quantity}
-                  </p>
-                  <div className="product-actions">
+                <div key={key} className="cart-item">
+                  <img src={item.image} alt={item.title} className="cart-img" />
+                  <div >
+                    <h2 className="cart-title">{item.title}</h2>
+                    <p className="cart-price">
+                      Price: ${parseFloat(item.price).toFixed(2)}
+                    </p>
+                  </div>
+
+
+                  <div className="cart-actions">
                     <input
                       type="number"
                       min="1"
@@ -70,10 +74,10 @@ function Cart() {
                       className="quantity-selector"
                     />
                     <button
-                      className="add-to-cart-button"
+                      className="update-btn"
                       onClick={() => handleUpdate(item)}
                     >
-                      Update
+                      Add
                     </button>
                     <button
                       className="remove-btn"
@@ -86,24 +90,33 @@ function Cart() {
               );
             })}
           </div>
+        )}
+      </div>
 
-          <div className="cart-total">
-            <h3>Subtotal: ${totalPrice.toFixed(2)}</h3>
-          </div>
-
-          <div
-            className="checkout-button-container"
-            style={{ textAlign: "center", marginTop: "2rem" }}
+      <div className="cart-right">
+        <h1 className="page-title">Order Summary</h1>
+        <div className="cart-total">
+          <h3>Subtotal: ${totalPrice.toFixed(2)}</h3>
+          <h4>Shipping: ${shippingCost.toFixed(2)}</h4>
+          <h4>Tax (13%): ${taxAmount.toFixed(2)}</h4>
+          <h3>Total: ${grandTotal.toFixed(2)}</h3>
+        </div>
+        <div className="checkout-button-container">
+          <button
+            className="add-to-cart-button"
+            onClick={() => navigate("/")}
           >
-            <button
-              className="add-to-cart-button"
-              onClick={() => navigate("/checkout")}
-            >
-              Proceed to Checkout
-            </button>
-          </div>
-        </>
-      )}
+            Continue Shopping
+          </button>
+          <button
+            className="add-to-cart-button"
+            onClick={() => navigate("/checkout")}
+            style={{ marginTop: "1rem" }}
+          >
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

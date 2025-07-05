@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import {Image} from "react-bootstrap"
 import { useContext } from "react";
 import { CartContext } from "../CartContext.jsx";
+
+    import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+    import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'; // Example fab icons
+
+
 import "./navbar.css"
 
 function Navbar() {
@@ -9,9 +15,13 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo">
-        <Link to="/">St. Elias Cathedral Orthodox Store</Link>
+      <div>
+        <Link to="/" className="navbar-logo">
+          <img src="/logos/st-elias-logo.png" alt="logo"/>
+          <span className="logo-text">St. Elias Bookstore</span>
+        </Link>
       </div>
+
       <ul className="navbar-links">
         {/* Books Dropdown */}
         <li className="dropdown">
@@ -50,7 +60,7 @@ function Navbar() {
         {/* Cart */}
         <li className="cart-link-wrapper">
           <Link to="/cart" className="cart-link">
-            Cart
+            <FontAwesomeIcon className="cart-image" icon={faShoppingCart} />
             {totalItems > 0 && (
               <span className="cart-counter">{totalItems}</span>
             )}
