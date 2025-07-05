@@ -1,7 +1,11 @@
 import React, { useState, useContext } from "react";
-import { useLocation } from "react-router-dom";
-import "./books.css";
+import { useLocation, Link } from "react-router-dom";
+import "./card.css";
 import { CartContext } from "../CartContext.jsx";
+import {Row, Col, Container} from 'react-bootstrap';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 
 const bookData = [
   {
@@ -55,7 +59,7 @@ function Books() {
   const params = new URLSearchParams(location.search);
   const subcategory = params.get("subcategory");
 
-  const filteredBooks = subcategory
+  const filteredItems = subcategory
     ? bookData.filter((book) => book.subcategory === subcategory)
     : bookData;
 
@@ -93,29 +97,37 @@ function Books() {
 
       <h1 className="page-title">Books</h1>
       <div className="product-grid">
-        {filteredBooks.map((book) => (
-          <div key={book.id} className="product-card">
-            <img src={book.image} alt={book.title} />
-            <h2 className="product-title">{book.title}</h2>
-            <p className="product-description">{book.description}</p>
-            <p className="product-price">${book.price.toFixed(2)}</p>
-            <div className="product-actions">
-              <input
-                type="number"
-                min="1"
-                value={quantities[book.id] || 1}
-                onChange={(e) =>
-                  handleQuantityChange(book.id, parseInt(e.target.value))
-                }
-                className="quantity-selector"
-              />
-              <button
-                className="add-to-cart-button"
-                onClick={() => handleAddToCart(book)}
+        {filteredItems.map((item) => (
+          <div key={item.id} className="product-card">
+            <img src={item.image} alt={item.title} />
+            <h2 className="product-title">{item.title}</h2>
+            <p className="product-price">${item.price.toFixed(2)}</p>
+            <p className="product-description">{item.description}</p>
+            <Row className="product-actions">
+              <Link
+                to={`/product/${item.link}`}
+                className="details-button"
               >
-                Add to Cart
-              </button>
-            </div>
+                View Details
+              </Link>
+            </Row>
+
+            <Col className="add-cart-buttons">
+                <button
+                  style={{ backgroundColor: 'transparent', border: 'none' }}
+                  onClick={() => handleAddToCart(item)}
+                  title="Add to Cart"
+                >
+                  <FontAwesomeIcon className="bag-image" icon={faBagShopping} size="lg" />
+                </button>
+                <input
+                  type="number"
+                  min="1"
+                  className="quantity-selector"
+                  value={quantities[item.id]}
+                  onChange={(e) => handleQuantityChange(item.id, e.target.value)}
+                />
+              </Col>
           </div>
         ))}
       </div>

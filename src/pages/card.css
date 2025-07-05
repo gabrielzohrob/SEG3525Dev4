@@ -1,25 +1,20 @@
 .page-title {
   text-align: center;
+  font-size: 2rem;
   margin-bottom: 2rem;
 }
 
-.product-page {
-  font-family: 'Georgia', serif;
-  background-color: #fffdf6;
-  min-height: 100vh;
-}
-
 .product-grid {
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 3rem;
-  margin-top: 4rem;
-  padding: 0 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  justify-content: center; /* horizontally center the grid */
+  gap: 2rem;
+  max-width: 2000px;
+  margin: auto;
 }
 
 .product-card {
-  width:250px;
   background-color: #fefcf8;
   border: 1px solid #d6a85c;
   border-radius: 10px;
@@ -27,11 +22,14 @@
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 360px;
+  height: 540px;
 }
 
 .product-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  transition: 0.4s ease;
 }
 
 .product-card img {
@@ -55,35 +53,64 @@
   margin-bottom: 0.5rem;
 }
 
+.product-description {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
 .product-actions {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   align-items: center;
-  margin-top: 0.5rem;
+}
+
+.details-button {
+  margin-top: 1rem;
+  padding: 0.4rem 0.9rem;
+  width: 200px;
+
+  background-color: #0c1f1a;
+  color: #f7eddc;
+  border: none;
+  border-radius: 5px;
+  
+  font-size: 0.95rem;
+  font-weight: bold;
+  
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.details-button:hover {
+  background-color: #165c47;
+}
+
+.add-cart-buttons{
+  margin-top :1.2rem;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.bag-image{
+  margin-right: 0.5rem;
+  color:#d6a85c;
+  background-color: transparent;
+}
+
+.bag-image:hover{
+  color:#F5E4B7;
+  background-color: transparent;
+
 }
 
 .quantity-selector {
+  margin-left: 0.5rem;
   width: 50px;
   padding: 0.3rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   text-align: center;
   font-size: 1rem;
-}
-
-.add-to-cart-button {
-  background-color: #0c1f1a;
-  color: #f7eddc;
-  border: none;
-  padding: 0.4rem 0.9rem;
-  font-size: 0.95rem;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.add-to-cart-button:hover {
-  background-color: #165c47;
 }

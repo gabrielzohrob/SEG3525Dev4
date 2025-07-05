@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useLocation, Link } from "react-router-dom";
-import "./other.css";
+import "./card.css";
+import {Row, Col, Container} from 'react-bootstrap';
 import { CartContext } from "../CartContext.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
@@ -123,30 +124,31 @@ function Other() {
             <h2 className="product-title">{item.title}</h2>
             <p className="product-price">${item.price.toFixed(2)}</p>
             <p className="product-description">{item.description}</p>
-            <div className="product-actions">
+            <Row className="product-actions">
               <Link
                 to={`/product/${item.link}`}
                 className="details-button"
               >
                 View Details
               </Link>
-              <button
-                className="fab-cart-button"
-                style={{ backgroundColor: 'transparent', border: 'none' }}
-                onClick={() => handleAddToCart(item)}
-                title="Add to Cart"
-              >
-                <FontAwesomeIcon className="bag-image" icon={faBagShopping} size="lg" />
-              </button>
-              <input
-                type="number"
-                min="1"
-                className="quantity-selector"
-                value={quantities[item.id]}
-                onChange={(e) => handleQuantityChange(item.id, e.target.value)}
-              />
-              
-            </div>
+            </Row>
+
+            <Col className="add-cart-buttons">
+                <button
+                  style={{ backgroundColor: 'transparent', border: 'none' }}
+                  onClick={() => handleAddToCart(item)}
+                  title="Add to Cart"
+                >
+                  <FontAwesomeIcon className="bag-image" icon={faBagShopping} size="lg" />
+                </button>
+                <input
+                  type="number"
+                  min="1"
+                  className="quantity-selector"
+                  value={quantities[item.id]}
+                  onChange={(e) => handleQuantityChange(item.id, e.target.value)}
+                />
+              </Col>
           </div>
         ))}
       </div>
