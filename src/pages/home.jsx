@@ -49,7 +49,7 @@ function Home() {
             <div className="hero-text-overlay">
               <h1>Welcome to the St. Elias Cathedral's <br></br>Online Bookstore</h1>
               
-              <p>The only orthodox shop located in Ottawa for handpicked Orthodox books, sacred icons, and devotional treasures for the faithful.</p>
+              <p>The only Orthodox shop located in Ottawa for handpicked Orthodox books, sacred icons, and devotional treasures for the faithful.</p>
               
               <div className="hero-buttons">
                 <Link to="/books">Books</Link>
