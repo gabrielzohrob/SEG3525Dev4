@@ -4,6 +4,8 @@ import { CartContext } from "../CartContext.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
+import logoImg from '/logos/st-elias-logo.png'; // ✅ static import
+
 import "./navbar.css";
 
 function Navbar() {
@@ -14,7 +16,7 @@ function Navbar() {
     <nav className="navbar">
       <div>
         <Link to="/" className="navbar-logo">
-          <img src={`${import.meta.env.BASE_URL}logos/st-elias-logo.png`} alt="logo" />
+          <img src={logoImg} alt="logo" />
           <span className="logo-text">St. Elias Bookstore</span>
         </Link>
       </div>

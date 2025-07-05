@@ -1,8 +1,13 @@
 import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Home.css';
-
 import { useState } from 'react';
+
+// STATIC IMAGE IMPORTS
+import storeImg from '/others/george-shop.jpg';
+import featuredBibleImg from '/books/orthodox-bible.jpg';
+import featuredPantocratorImg from '/icons/pantocrator.jpg';
+import featuredKomboskiniImg from '/others/komboskini.jpg';
 
 function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -37,7 +42,7 @@ function Home() {
       <section className="hero-section">
         <div className="hero-container">
           <img
-            src={`${import.meta.env.BASE_URL}others/george-shop.jpg`}
+            src={storeImg}
             className="hero-background-img"
             alt="Store"
           />
@@ -97,17 +102,17 @@ function Home() {
           {[
             {
               title: 'Orthodox Study Bible',
-              image: `${import.meta.env.BASE_URL}books/orthodox-bible.jpg`,
+              image: featuredBibleImg,
               link: 'studybible'
             },
             {
               title: 'Icon of Christ Pantocrator',
-              image: `${import.meta.env.BASE_URL}icons/pantocrator.jpg`,
+              image: featuredPantocratorImg,
               link: 'pantocrator'
             },
             {
               title: 'Prayer Rope (Komboskini)',
-              image: `${import.meta.env.BASE_URL}others/komboskini.jpg`,
+              image: featuredKomboskiniImg,
               link: 'komb33'
             },
           ].map((item, index) => (

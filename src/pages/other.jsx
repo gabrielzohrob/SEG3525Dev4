@@ -1,19 +1,27 @@
 import React, { useState, useContext } from "react";
 import { useLocation, Link } from "react-router-dom";
 import "./card.css";
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { CartContext } from "../CartContext.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 
-// Items with subcategories
+// Static image imports
+import prayerRope33Img from '/others/33knot.jpg';
+import prayerRope100Img from '/others/100knot.jpg';
+import incenseImg from '/others/incense.jpg';
+import charcoalImg from '/others/charcoal.jpg';
+import crossImg from '/others/cross.jpg';
+import candlesImg from '/others/candles.jpg';
+
+// Items with static image paths
 const otherItems = [
   {
     id: 1,
     title: "Prayer Rope (33 knots)",
     price: 12.0,
     description: "Traditional woolen prayer rope used for the Jesus Prayer.",
-    image: `${import.meta.env.BASE_URL}others/33knot.jpg`,
+    image: prayerRope33Img,
     subcategory: "Prayer Rope",
     link: "prayerrope33"
   },
@@ -22,7 +30,7 @@ const otherItems = [
     title: "Prayer Rope (100 knots)",
     price: 20.0,
     description: "Longer woolen prayer rope for extended prayer and meditation.",
-    image: `${import.meta.env.BASE_URL}others/100knot.jpg`,
+    image: prayerRope100Img,
     subcategory: "Prayer Rope",
     link: "prayerrope100"
   },
@@ -31,7 +39,7 @@ const otherItems = [
     title: "Incense - Byzantine Blend",
     price: 8.5,
     description: "High-quality incense with a rich, aromatic Byzantine fragrance.",
-    image: `${import.meta.env.BASE_URL}others/incense.jpg`,
+    image: incenseImg,
     subcategory: "Incense",
     link: "incensebyzantine"
   },
@@ -40,7 +48,7 @@ const otherItems = [
     title: "Charcoal Tablets (Box)",
     price: 6.0,
     description: "Quick-lighting charcoal for burning incense at home or church.",
-    image: `${import.meta.env.BASE_URL}others/charcoal.jpg`,
+    image: charcoalImg,
     subcategory: "Incense",
     link: "charcoaltablets"
   },
@@ -49,7 +57,7 @@ const otherItems = [
     title: "Orthodox Wall Cross (Wooden)",
     price: 18.0,
     description: "Hand-carved wooden wall cross for prayer corners.",
-    image: `${import.meta.env.BASE_URL}others/cross.jpg`,
+    image: crossImg,
     subcategory: "Cross",
     link: "woodencross"
   },
@@ -58,7 +66,7 @@ const otherItems = [
     title: "Pure Beeswax Candles",
     price: 30.0,
     description: "Candles made out of Pure Beeswax",
-    image: `${import.meta.env.BASE_URL}others/candles.jpg`,
+    image: candlesImg,
     subcategory: "Candles",
     link: "beeswaxcandles"
   },
@@ -71,7 +79,6 @@ function Other() {
     otherItems.reduce((acc, item) => ({ ...acc, [item.id]: 1 }), {})
   );
 
-  // URL-based filtering
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const subcategory = searchParams.get("subcategory");

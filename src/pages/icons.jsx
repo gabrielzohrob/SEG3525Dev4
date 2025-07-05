@@ -6,22 +6,39 @@ import { Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 
+// Static image imports
+import pantocratorImg from '/icons/pantocrator.jpg';
+import vladimirImg from '/icons/theotokosofvladimir.jpg';
+import georgeImg from '/icons/georgethetrophybearer.jpg';
+import trinityImg from '/icons/holytrinityrublev.jpg';
+import nicholasImg from '/icons/stnicholasthewonderworker.jpg';
+import kazanImg from '/icons/theotokosofkazan.jpg';
+import resurrectionImg from '/icons/iconofresurrection.jpg';
+import nativityImg from '/icons/iconofnativity.jpg';
+import seraphimImg from '/icons/seraphimofsarov.jpg';
+import paisiosImg from '/icons/paisios.jpg';
+import mosesImg from '/icons/mosestheblack.jpg';
+import transfigurationImg from '/icons/iconoftransfiguration.jpg';
+import joyImg from '/icons/joyofallsorrow.jpg';
+import crucifixionImg from '/icons/iconofcrucifixion.jpg';
+import michaelImg from '/icons/archangelmichael.jpg';
+
 const iconsData = [
-  { id: 1, title: "Icon of Christ Pantocrator", price: 30, subcategory: "Christ", image: `${import.meta.env.BASE_URL}icons/pantocrator.jpg`, link: "pantocrator", description: "An iconic image of Christ the Almighty, symbolizing divine authority and wisdom." },
-  { id: 2, title: "Theotokos of Vladimir", price: 28, subcategory: "Theotokos", image: `${import.meta.env.BASE_URL}icons/theotokosofvladimir.jpg`, link: "theotokosvladimir", description: "A revered icon of the Virgin Mary as the Mother of God, embodying compassion and protection." },
-  { id: 3, title: "St. George the Trophy-Bearer", price: 25, subcategory: "Saints", image: `${import.meta.env.BASE_URL}icons/georgethetrophybearer.jpg`, link: "georgethetrophybearer", description: "Depicts St. George slaying the dragon, symbolizing the victory of good over evil." },
-  { id: 4, title: "Holy Trinity (Rublev)", price: 32, subcategory: "Feasts", image: `${import.meta.env.BASE_URL}icons/holytrinityrublev.jpg`, link: "holytrinityrublev", description: "A famous icon representing the Holy Trinity, emphasizing unity and divine mystery." },
-  { id: 5, title: "St. Nicholas the Wonderworker", price: 26, subcategory: "Saints", image: `${import.meta.env.BASE_URL}icons/stnicholasthewonderworker.jpg`, link: "stnicholasthewonderworker", description: "Icon of St. Nicholas, known for his miracles and generosity to the needy." },
-  { id: 6, title: "Theotokos of Kazan", price: 28, subcategory: "Theotokos", image: `${import.meta.env.BASE_URL}icons/theotokosofkazan.jpg`, link: "theotokoskazan", description: "A revered icon of the Virgin Mary, symbolizing protection and intercession." },
-  { id: 7, title: "Resurrection of Christ (Anastasis)", price: 35, subcategory: "Feasts", image: `${import.meta.env.BASE_URL}icons/iconofresurrection.jpg`, link: "iconofresurrection", description: "Depicts Christ’s resurrection, triumphing over death and sin." },
-  { id: 8, title: "Icon of the Nativity", price: 33, subcategory: "Feasts", image: `${import.meta.env.BASE_URL}icons/iconofnativity.jpg`, link: "iconofnativity", description: "Represents the birth of Christ, a central event in Christian faith." },
-  { id: 9, title: "St. Seraphim of Sarov", price: 27, subcategory: "Saints", image: `${import.meta.env.BASE_URL}icons/seraphimofsarov.jpg`, link: "seraphimofsarov", description: "Icon of St. Seraphim, known for his spiritual teachings and miracles." },
-  { id: 10, title: "St. Paisios the Athonite", price: 29, subcategory: "Saints", image: `${import.meta.env.BASE_URL}icons/paisios.jpg`, link: "paisios", description: "Honors St. Paisios, a modern saint known for his wisdom and humility." },
-  { id: 11, title: "St. Moses the Black", price: 27, subcategory: "Saints", image: `${import.meta.env.BASE_URL}icons/mosestheblack.jpg`, link: "mosestheblack", description: "Depicts St. Moses the Black, a former outlaw turned ascetic and saint." },
-  { id: 12, title: "Transfiguration of Christ", price: 34, subcategory: "Feasts", image: `${import.meta.env.BASE_URL}icons/iconoftransfiguration.jpg`, link: "iconoftransfiguration", description: "Shows Christ’s transfiguration, revealing his divine glory to the apostles." },
-  { id: 13, title: "Theotokos Joy of All Who Sorrow", price: 28, subcategory: "Theotokos", image: `${import.meta.env.BASE_URL}icons/joyofallsorrow.jpg`, link: "joyofallsorrow", description: "An icon of the Virgin Mary offering comfort to those in distress." },
-  { id: 14, title: "Icon of the Crucifixion", price: 33, subcategory: "Feasts", image: `${import.meta.env.BASE_URL}icons/iconofcrucifixion.jpg`, link: "iconofcrucifixion", description: "Depicts the crucifixion of Christ, central to Christian salvation." },
-  { id: 15, title: "Archangel Michael", price: 26, subcategory: "Saints", image: `${import.meta.env.BASE_URL}icons/archangelmichael.jpg`, link: "archangelmichael", description: "Icon of Archangel Michael, the protector and leader of heavenly hosts." }
+  { id: 1, title: "Icon of Christ Pantocrator", price: 30, subcategory: "Christ", image: pantocratorImg, link: "pantocrator", description: "An iconic image of Christ the Almighty, symbolizing divine authority and wisdom." },
+  { id: 2, title: "Theotokos of Vladimir", price: 28, subcategory: "Theotokos", image: vladimirImg, link: "theotokosvladimir", description: "A revered icon of the Virgin Mary as the Mother of God, embodying compassion and protection." },
+  { id: 3, title: "St. George the Trophy-Bearer", price: 25, subcategory: "Saints", image: georgeImg, link: "georgethetrophybearer", description: "Depicts St. George slaying the dragon, symbolizing the victory of good over evil." },
+  { id: 4, title: "Holy Trinity (Rublev)", price: 32, subcategory: "Feasts", image: trinityImg, link: "holytrinityrublev", description: "A famous icon representing the Holy Trinity, emphasizing unity and divine mystery." },
+  { id: 5, title: "St. Nicholas the Wonderworker", price: 26, subcategory: "Saints", image: nicholasImg, link: "stnicholasthewonderworker", description: "Icon of St. Nicholas, known for his miracles and generosity to the needy." },
+  { id: 6, title: "Theotokos of Kazan", price: 28, subcategory: "Theotokos", image: kazanImg, link: "theotokoskazan", description: "A revered icon of the Virgin Mary, symbolizing protection and intercession." },
+  { id: 7, title: "Resurrection of Christ (Anastasis)", price: 35, subcategory: "Feasts", image: resurrectionImg, link: "iconofresurrection", description: "Depicts Christ’s resurrection, triumphing over death and sin." },
+  { id: 8, title: "Icon of the Nativity", price: 33, subcategory: "Feasts", image: nativityImg, link: "iconofnativity", description: "Represents the birth of Christ, a central event in Christian faith." },
+  { id: 9, title: "St. Seraphim of Sarov", price: 27, subcategory: "Saints", image: seraphimImg, link: "seraphimofsarov", description: "Icon of St. Seraphim, known for his spiritual teachings and miracles." },
+  { id: 10, title: "St. Paisios the Athonite", price: 29, subcategory: "Saints", image: paisiosImg, link: "paisios", description: "Honors St. Paisios, a modern saint known for his wisdom and humility." },
+  { id: 11, title: "St. Moses the Black", price: 27, subcategory: "Saints", image: mosesImg, link: "mosestheblack", description: "Depicts St. Moses the Black, a former outlaw turned ascetic and saint." },
+  { id: 12, title: "Transfiguration of Christ", price: 34, subcategory: "Feasts", image: transfigurationImg, link: "iconoftransfiguration", description: "Shows Christ’s transfiguration, revealing his divine glory to the apostles." },
+  { id: 13, title: "Theotokos Joy of All Who Sorrow", price: 28, subcategory: "Theotokos", image: joyImg, link: "joyofallsorrow", description: "An icon of the Virgin Mary offering comfort to those in distress." },
+  { id: 14, title: "Icon of the Crucifixion", price: 33, subcategory: "Feasts", image: crucifixionImg, link: "iconofcrucifixion", description: "Depicts the crucifixion of Christ, central to Christian salvation." },
+  { id: 15, title: "Archangel Michael", price: 26, subcategory: "Saints", image: michaelImg, link: "archangelmichael", description: "Icon of Archangel Michael, the protector and leader of heavenly hosts." }
 ];
 
 function Icons() {
