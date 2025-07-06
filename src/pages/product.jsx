@@ -41,7 +41,7 @@ const productData = {
         title: 'Orthodox Study Bible',
         image: studyBibleImg,
         description: 'The Orthodox Study Bible stands as a comprehensive guide to understanding the richness of Eastern Christian tradition. It combines the literal translation of the Old Testament and the New Testament with commentary drawn from the Church Fathers, liturgical texts, and modern scholarship, making it an indispensable resource for both personal study and congregational teaching.\n\nWith extensive footnotes, cross-references, and articles on doctrinal themes, this volume invites readers to delve deeper into the spiritual heritage of Orthodoxy. Its elegant design and durable binding ensure that it will remain a treasured companion for years to come.',
-        price: 49.99
+        price: 79.99
     },
     thewayofapilgrim: {
         title: 'The Way of a Pilgrim',
