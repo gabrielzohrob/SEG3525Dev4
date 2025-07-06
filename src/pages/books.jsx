@@ -12,6 +12,7 @@ import book2Img from '/books/orthodoxprayerbook.jpg';
 import book3Img from '/books/theladderofdivineascent.jpg';
 import book4Img from '/books/woundedbylove.jpg';
 import book5Img from '/books/theorthodoxchurch.jpg';
+import book6Img from '/books/orthodox-bible.jpg';
 
 const bookData = [
   {
@@ -25,7 +26,7 @@ const bookData = [
   },
   {
     id: 2,
-    title: "Orthodox Prayer Book",
+    title: "Pocket Prayer Book",
     price: 15.0,
     subcategory: "Prayer Book",
     description: "A compact and essential guide to daily Orthodox prayers and services.",
@@ -58,6 +59,16 @@ const bookData = [
     description: "The Orthodox Church, an Introduction to Eastern Christianity, by Timothy Ware",
     image: book5Img,
     link:"orthodoxchurch",
+  },
+
+  {
+    id: 6,
+    title: "The Orthodox Study Bible",
+    price: 79.99,
+    subcategory: "Bible",
+    description: "The first ever Orthodox Study Bible presents the Bible of the early church and the church of the early Bible.",
+    image: book6Img,
+    link:"studybible",
   },
 ];
 

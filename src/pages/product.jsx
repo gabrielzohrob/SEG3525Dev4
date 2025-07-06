@@ -50,9 +50,9 @@ const productData = {
         price: 22.99
     },
     orthodoxprayerbook: {
-        title: 'Orthodox Prayer Book',
+        title: 'A Pocket Prayer Book for Orthodox Christians',
         image: orthodoxPrayerBookImg,
-        description: 'This Orthodox Prayer Book provides a curated selection of daily prayers, hymns, and liturgical texts designed to guide believers through the cycle of Orthodox worship. It includes morning and evening prayers, intercessions for the sick, and special services for feast days, making it a versatile companion for both private devotion and parish life.\n\nCompact and thoughtfully arranged, it features the original Church Slavonic text alongside modern translations, offering clarity and accessibility without sacrificing the solemn beauty of the tradition. Ideal for newcomers and lifelong practitioners alike.',
+        description: 'This perennially popular pocket-size book contains the standard daily personal prayers of Orthodox Christians, as well as prayers for many special needs and circumstances. It includes concise spiritual helps and factual lists to guide the faithful through everyday and extraordinary moments of life.\n\nA helpful guide is provided for preparing for confession, along with prayers for preparation for Holy Communion, and it includes the full text of the Divine Liturgy of St. John Chrysostom. Prepared by the Antiochian Orthodox Christian Archdiocese, it is perfectly suited for private devotion, travel, and daily use.',
         price: 15.00
     },
     ladderofdivineascent: {
@@ -168,7 +168,7 @@ const productData = {
 
 
 
-    
+
     prayerrope33: {
         title: 'Prayer Rope (33 knots)',
         image: rope33Img,

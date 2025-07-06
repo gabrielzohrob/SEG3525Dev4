@@ -6,10 +6,33 @@ import './Breadcrumbs.css';
 
 // Replace this with your real product map
 const productTitles = {
-  ladderofdivineascent: "The Ladder of Divine Ascent",
-  studybible: "Orthodox Study Bible",
-  pantocrator: "Icon of Christ Pantocrator",
-  // ...add more
+  studybible: 'Orthodox Study Bible',
+  thewayofapilgrim: 'The Way of a Pilgrim',
+  orthodoxprayerbook: 'Pocket Prayer Book',
+  ladderofdivineascent: 'The Ladder of Divine Ascent',
+  woundedbylove: 'Wounded by Love',
+  orthodoxchurch: 'The Orthodox Church',
+  pantocrator: 'Icon of Christ Pantocrator',
+  theotokosvladimir: 'Theotokos of Vladimir',
+  georgethetrophybearer: 'St. George the Trophy-Bearer',
+  holytrinityrublev: 'Holy Trinity (Rublev)',
+  stnicholasthewonderworker: 'St. Nicholas',
+  theotokoskazan: 'Theotokos of Kazan',
+  iconofresurrection: 'Resurrection of Christ',
+  iconofnativity: 'Icon of the Nativity',
+  seraphimofsarov: 'St. Seraphim of Sarov',
+  paisios: 'St. Paisios the Athonite',
+  mosestheblack: 'St. Moses the Black',
+  iconoftransfiguration: 'Transfiguration of Christ',
+  joyofallsorrow: 'Theotokos Joy of All Who Sorrow',
+  iconofcrucifixion: 'Icon of the Crucifixion',
+  archangelmichael: 'Archangel Michael',
+  prayerrope33: 'Prayer Rope (33 knots)',
+  prayerrope100: 'Prayer Rope (100 knots)',
+  incensebyzantine: 'Incense - Byzantine Blend',
+  charcoaltablets: 'Charcoal Tablets',
+  woodencross: 'Orthodox Wall Cross',
+  beeswaxcandles: 'Pure Beeswax Candles',
 };
 
 const productCategoryMap = {
@@ -81,15 +104,16 @@ const Breadcrumbs = () => {
             <span key={to}>
               {' / '}
               {(() => {
-                if (isLast) {
-                  return label;
-                }
                 if (
                   ['books','icons','other'].includes(pathnames[0]) &&
                   filter &&
                   index === 0
                 ) {
-                  return <Link to={{ pathname: to, search: `?subcategory=${filter}` }}>{label}</Link>;
+                  // Clear filter: link back to bare category
+                  return <Link to={to}>{label}</Link>;
+                }
+                if (isLast) {
+                  return label;
                 }
                 if (segment === 'product') {
                   // Link to the real category page instead of '/product'
