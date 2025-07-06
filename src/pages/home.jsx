@@ -120,7 +120,9 @@ function Home() {
               <img src={item.image} alt={item.title} />
               <h3>{item.title}</h3>
               <div className="featured-card-button">
-                <Button href={`/product/${item.link}`}>Learn more</Button>
+                <Link to={`/product/${item.link}`} className="details-button">
+                  View Details
+                </Link>
               </div>
             </div>
           ))}

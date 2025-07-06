@@ -177,6 +177,24 @@
   margin: 1rem;
 }
 
+.details-button {
+  margin-top: 1rem;
+  padding: 0.4rem 0.9rem;
+  width: 200px;
+
+  background-color: #0c1f1a;
+  color: #f7eddc;
+  border: none;
+  border-radius: 5px;
+  
+  font-size: 0.95rem;
+  font-weight: bold;
+  
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
 .featured-card-button .btn {
   background-color: #d6a85c;
   color: #0c1f1a;
