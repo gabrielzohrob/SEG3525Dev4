@@ -113,7 +113,7 @@ function Home() {
             {
               title: 'Prayer Rope (Komboskini)',
               image: featuredKomboskiniImg,
-              link: 'komb33'
+              link: 'prayerrope33'
             },
           ].map((item, index) => (
             <div key={index} className="featured-card">
