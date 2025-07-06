@@ -3,12 +3,43 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import './Breadcrumbs.css';
 
 
+
 // Replace this with your real product map
 const productTitles = {
   ladderofdivineascent: "The Ladder of Divine Ascent",
   studybible: "Orthodox Study Bible",
   pantocrator: "Icon of Christ Pantocrator",
   // ...add more
+};
+
+const productCategoryMap = {
+  studybible: 'books',
+  thewayofapilgrim: 'books',
+  orthodoxprayerbook: 'books',
+  ladderofdivineascent: 'books',
+  woundedbylove: 'books',
+  orthodoxchurch: 'books',
+  pantocrator: 'icons',
+  theotokosvladimir: 'icons',
+  georgethetrophybearer: 'icons',
+  holytrinityrublev: 'icons',
+  stnicholasthewonderworker: 'icons',
+  theotokoskazan: 'icons',
+  iconofresurrection: 'icons',
+  iconofnativity: 'icons',
+  seraphimofsarov: 'icons',
+  paisios: 'icons',
+  mosestheblack: 'icons',
+  iconoftransfiguration: 'icons',
+  joyofallsorrow: 'icons',
+  iconofcrucifixion: 'icons',
+  archangelmichael: 'icons',
+  prayerrope33: 'other',
+  prayerrope100: 'other',
+  incensebyzantine: 'other',
+  charcoaltablets: 'other',
+  woodencross: 'other',
+  beeswaxcandles: 'other',
 };
 
 const getBreadcrumbLabel = (segment, index, pathSegments) => {
@@ -48,8 +79,28 @@ const Breadcrumbs = () => {
 
         return (
             <span key={to}>
-            {' / '}
-            {<Link to={to}>{label}</Link>}
+              {' / '}
+              {(() => {
+                if (isLast) {
+                  return label;
+                }
+                if (
+                  ['books','icons','other'].includes(pathnames[0]) &&
+                  filter &&
+                  index === 0
+                ) {
+                  return <Link to={{ pathname: to, search: `?subcategory=${filter}` }}>{label}</Link>;
+                }
+                if (segment === 'product') {
+                  // Link to the real category page instead of '/product'
+                  const productId = pathnames[1];
+                  const category = productCategoryMap[productId] || 'other';
+                  const categoryLabelMap = { books: 'Books', icons: 'Icons', other: 'Other Items' };
+                  const categoryLabel = categoryLabelMap[category];
+                  return <Link to={`/${category}`}>{categoryLabel}</Link>;
+                }
+                return <Link to={to}>{label}</Link>;
+              })()}
             </span>
         );
     })}
